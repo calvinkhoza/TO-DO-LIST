@@ -75,5 +75,4 @@ Dark Mode: Implement a dark mode toggle.
 Better Styling: Improve the design with animations and transitions.
 
 ## Link of the project
-https://maurenk.github.io/Maury-ToDo-List/
- 
+https://maurenk.github.io/Maury-ToDo-List/ 
