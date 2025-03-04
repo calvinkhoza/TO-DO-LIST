@@ -15,7 +15,7 @@ setInterval(updateClock, 1000);
 updateClock();
 
 // Load tasks when the page loads
-window.onload = function() {
+window.onload = function () {
   loadTasks(); // Load tasks from localStorage if the user is signed in
 };
 
@@ -46,16 +46,16 @@ function signUp() {
   const password = document.getElementById('signUpPassword').value;
 
   if (!username || !email || !password) {
-    alert('Please fill in all fields.');
-    return;
+      alert('Please fill in all fields.');
+      return;
   }
 
   const users = JSON.parse(localStorage.getItem('users')) || [];
   const userExists = users.find(user => user.username === username);
 
   if (userExists) {
-    alert('Username already taken!');
-    return;
+      alert('Username already taken!');
+      return;
   }
 
   const newUser = { username, email, password };
@@ -72,16 +72,16 @@ function signIn() {
   const password = document.getElementById('signInPassword').value;
 
   if (!username || !password) {
-    alert('Please fill in all fields.');
-    return;
+      alert('Please fill in all fields.');
+      return;
   }
 
   const users = JSON.parse(localStorage.getItem('users')) || [];
   const user = users.find(user => user.username === username && user.password === password);
 
   if (!user) {
-    alert('Invalid username or password!');
-    return;
+      alert('Invalid username or password!');
+      return;
   }
 
   localStorage.setItem('signedInUser', JSON.stringify(user));
@@ -99,28 +99,28 @@ function showTodoSection() {
 function resetPassword() {
   const email = document.getElementById('forgotPasswordEmail').value;
   if (email) {
-    alert('Password reset link sent to ' + email);
-    showSignInForm();
+      alert('Password reset link sent to ' + email);
+      showSignInForm();
   } else {
-    alert('Please enter your email address.');
+      alert('Please enter your email address.');
   }
 }
 
 // Add a new task with a due date and reminder
-document.getElementById('addBtn').addEventListener('click', function() {
-  const todoInput = document.getElementById('todoInput');
-  const todoText = todoInput.value.trim();
+document.getElementById('addBtn').addEventListener('click', function () {
+  const taskInput = document.getElementById('todoInput');
+  const todoText = taskInput.value.trim();
   const dueDateInput = document.getElementById('dueDate');
   const dueDate = dueDateInput.value;
 
   if (todoText === '') {
-    alert('Please enter a task');
-    return;
+      alert('Please enter a task');
+      return;
   }
 
   if (!dueDate) {
-    alert('Please select a due date');
-    return;
+      alert('Please select a due date');
+      return;
   }
 
   // Create a new list item
@@ -145,17 +145,17 @@ document.getElementById('addBtn').addEventListener('click', function() {
   deleteBtn.textContent = 'Delete';
   deleteBtn.onclick = () => removeTodoItem(li);
 
-  // Create a "Set Reminder" button for linking to Google Calendar
+  // Create a "Set Reminder" button
   const reminderBtn = document.createElement('button');
   reminderBtn.textContent = 'Set Reminder';
   reminderBtn.onclick = () => setReminder(todoText, dueDate);
 
-  // Append task text, due date, checkbox, delete button, and reminder button to the list item
+  // Append all elements to the list item
+  li.appendChild(checkbox);
   li.appendChild(taskText);
   li.appendChild(taskDueDate);
-  li.appendChild(checkbox);
-  li.appendChild(deleteBtn);
   li.appendChild(reminderBtn);
+  li.appendChild(deleteBtn);
 
   // Append the list item to the ul
   document.getElementById('todoList').appendChild(li);
@@ -164,7 +164,7 @@ document.getElementById('addBtn').addEventListener('click', function() {
   storeTasks();
 
   // Clear the input fields
-  todoInput.value = '';
+  taskInput.value = '';
   dueDateInput.value = '';
 });
 
@@ -199,15 +199,15 @@ function toggleCompleteTask(li, checkbox) {
   const taskDueDate = li.querySelector('.due-date'); // Get task due date
 
   if (checkbox.checked) {
-    // Mark as completed
-    li.classList.add('completed');
-    taskText.style.textDecoration = 'line-through'; // Add strike-through effect
-    taskText.style.color = '#888'; // Change text color to gray
+      // Mark as completed
+      li.classList.add('completed');
+      taskText.style.textDecoration = 'line-through'; // Add strike-through effect
+      taskText.style.color = '#888'; // Change text color to gray
   } else {
-    // Undo completion (unclick the task)
-    li.classList.remove('completed');
-    taskText.style.textDecoration = 'none'; // Remove strike-through
-    taskText.style.color = ''; // Restore text color
+      // Undo completion (unclick the task)
+      li.classList.remove('completed');
+      taskText.style.textDecoration = 'none'; // Remove strike-through
+      taskText.style.color = ''; // Restore text color
   }
 
   storeTasks(); // Update the storage after toggling the completion
@@ -219,10 +219,10 @@ function storeTasks() {
   const taskItems = document.querySelectorAll('#todoList li');
 
   taskItems.forEach(item => {
-    const taskText = item.querySelector('span').textContent;
-    const taskDueDate = item.querySelector('.due-date').textContent.replace('Due: ', '');
-    const isCompleted = item.querySelector('input').checked;
-    tasks.push({ text: taskText, dueDate: taskDueDate, completed: isCompleted });
+      const taskText = item.querySelector('span').textContent;
+      const taskDueDate = item.querySelector('.due-date').textContent.replace('Due: ', '');
+      const isCompleted = item.querySelector('input').checked;
+      tasks.push({ text: taskText, dueDate: taskDueDate, completed: isCompleted });
   });
 
   localStorage.setItem('tasks', JSON.stringify(tasks)); // Save tasks in localStorage as a JSON string
@@ -232,38 +232,43 @@ function storeTasks() {
 function loadTasks() {
   const storedTasks = localStorage.getItem('tasks');
   if (storedTasks) {
-    const tasks = JSON.parse(storedTasks);
-    tasks.forEach(task => {
-      const li = document.createElement('li');
+      const tasks = JSON.parse(storedTasks);
+      tasks.forEach(task => {
+          const li = document.createElement('li');
 
-      const taskText = document.createElement('span');
-      taskText.textContent = task.text;
+          const taskText = document.createElement('span');
+          taskText.textContent = task.text;
 
-      const taskDueDate = document.createElement('span');
-      taskDueDate.textContent = `Due: ${task.dueDate}`;
-      taskDueDate.classList.add('due-date');
+          const taskDueDate = document.createElement('span');
+          taskDueDate.textContent = `Due: ${task.dueDate}`;
+          taskDueDate.classList.add('due-date');
 
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.checked = task.completed;
-      checkbox.onclick = () => toggleCompleteTask(li, checkbox);
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.checked = task.completed;
+          checkbox.onclick = () => toggleCompleteTask(li, checkbox);
 
-      const deleteBtn = document.createElement('button');
-      deleteBtn.textContent = 'Delete';
-      deleteBtn.onclick = () => removeTodoItem(li);
+          const deleteBtn = document.createElement('button');
+          deleteBtn.textContent = 'Delete';
+          deleteBtn.onclick = () => removeTodoItem(li);
 
-      li.appendChild(taskText);
-      li.appendChild(taskDueDate);
-      li.appendChild(checkbox);
-      li.appendChild(deleteBtn);
+          const reminderBtn = document.createElement('button');
+          reminderBtn.textContent = 'Set Reminder';
+          reminderBtn.onclick = () => setReminder(task.text, task.dueDate);
 
-      if (task.completed) {
-        li.classList.add('completed');
-        taskText.style.textDecoration = 'line-through';
-        taskText.style.color = '#888';
-      }
+          li.appendChild(checkbox);
+          li.appendChild(taskText);
+          li.appendChild(taskDueDate);
+          li.appendChild(reminderBtn);
+          li.appendChild(deleteBtn);
 
-      document.getElementById('todoList').appendChild(li);
-    });
+          if (task.completed) {
+              li.classList.add('completed');
+              taskText.style.textDecoration = 'line-through';
+              taskText.style.color = '#888';
+          }
+
+          document.getElementById('todoList').appendChild(li);
+      });
   }
 }

@@ -2,7 +2,7 @@
 body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   background-color: #2f4f4f ;
-  background-image: url(image.jfif);
+  background-image: url(lovepik-science-and-technology-information-technology-background-image_400112393.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,10 +11,45 @@ body {
   flex-direction: column;
   text-align: center;
 }
+  /* General Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
+h1 {
+  font-size: 3rem;
+  color: #d61c1c;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #007bff, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
 /* Header Styling */
 #header {
-  background-color: #555555;
+  background-color: #d80b0b;
   color: white;
   padding: 15px 0;
   width: 100%;
@@ -27,7 +62,7 @@ body {
 }
 /* Basic styling for the header */
 #header {
-  background-color: #333; /* Dark background */
+  background-color: #5458b1; /* Dark background */
   color: #fff; /* White text */
   padding: 20px;
   text-align: center;
@@ -190,43 +225,139 @@ body {
   background-color: #a5c6d6;
 }
 
-/* To-Do List Section Container */
-#todoSection {
-  background-color: #eceaec;
-  padding: 20px;
+/* To-Do List Container */
+   #todoSection {
+  background-color: #fff;
+  padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.5s ease-in-out;
+ }
 
-#todoSection .task-input {
-  margin-bottom: 20px;
-}
+ /* Task Input Section */
+  .task-input {
+   display: flex;
+   gap: 1rem;
+   margin-bottom: 1.5rem;
+ }
 
-#todoSection .task-input input {
-  width: 80%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 2px solid #f6f5f8;
-  font-size: 1em;
-}
+        .task-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
 
-#todoSection button {
-  width: 80%; /* Button width adjusts on mobile */
-  padding: 12px;
-  background-color: #5f92aa;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-top: 15px;
-}
+        .task-input input:focus {
+            border-color: #007bff;
+        }
 
-#todoSection button:hover {
-  background-color: #8797af;
-}
+        .task-input button {
+            padding: 0.75rem 1.5rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
+        .task-input button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Task List */
+        #todoList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #todoList li {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li:hover {
+            background-color: #f1f1f1;
+        }
+
+        #todoList li.completed {
+            background-color: #e8f5e9;
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        #todoList li .task-text {
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        #todoList li .due-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        #todoList li .tick-box {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        #todoList li .reminder-btn {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li .reminder-btn:hover {
+            background-color: #e0a800;
+        }
+
+        #todoList li .delete-btn {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li .delete-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 /* Media Queries for responsiveness */
 
 /* For devices smaller than 768px (e.g., tablets and mobile phones) */
