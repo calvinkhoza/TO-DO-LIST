@@ -11,83 +11,183 @@ body {
   flex-direction: column;
   text-align: center;
 }
-  /* General Styles */
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9;
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh; /* Fixed typo: "min: height" -> "min-height" */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    background: #4b6584;
 }
 
-h1 {
-  font-size: 3rem;
-  color: #d61c1c;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #007bff, #00bfff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 1s ease-in-out;
+.form-container {
+    position: relative;
+    width: 400px;
+    padding: 50px 40px;
+    background: #0a0a0a;
+    overflow: hidden;
 }
 
-/* Animation */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-/* Header Styling */
-#header {
-  background-color: #d80b0b;
-  color: white;
-  padding: 15px 0;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.8em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-/* Basic styling for the header */
-#header {
-  background-color: #5458b1; /* Dark background */
-  color: #fff; /* White text */
-  padding: 20px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  position: relative;
-  overflow: hidden;
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%; /* Fixed typo: missing "%" */
+    width: 400px;
+    height: 520px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right; /* Fixed typo: "buttom" -> "bottom" */
+    animation: animate 6s linear infinite;
 }
 
-/* Styling for the clock */
-#clock {
-  font-size: 1.5em; /* Large font size */
-  font-weight: bold;
-  animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+.form-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%; /* Fixed typo: missing "%" */
+    width: 400px;
+    height: 520px;
+    background: linear-gradient(0deg, transparent, #2759ff, #276bff);
+    transform-origin: bottom right; /* Fixed typo: "buttom" -> "bottom" */
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
 }
 
-/* Keyframes for the fade-in animation */
-@keyframes fadeIn {
-  0% {
-      opacity: 0;
-      transform: translateY(-20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    position: relative;
+    z-index: 10;
+    background: #0a0a0a;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.input-box {
+    position: relative; /* Added to position the label correctly */
+}
+
+.input-box input {
+    width: 100%; /* Fixed typo: "100" -> "100%" */
+    padding: 15px 20px;
+    border: none;
+    background: #1a1a1a;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.input-box label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5); /* Fixed syntax: "rgb(255, 255, 255,0.5)" -> "rgba(255, 255, 255, 0.5)" */
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label { /* Fixed syntax: missing comma */
+    top: -10px;
+    left: 15px;
+    font-size: 0.8em;
+    color: #3d27ff;
+    box-shadow: 0 0 20px rgba(255, 39, 112, 0.33); /* Fixed syntax: "#ff277055" -> "rgba(255, 39, 112, 0.33)" */
+}
+
+.form button {
+    background: linear-gradient(45deg, #5427cf, #45f3ff);
+    border: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.form button:hover::before {
+    left: 100%; /* Added to animate the gradient effect on hover */
+}
+
+.form button:hover
+{
+  box-shadow:0 0 30px #103d70 ;
+  transform: translateY(-2px);
+
+}
+@media  ( max-width :480px)
+{
+.form-container{
+    width:90% ;
+    padding: 30%;
+}
+.form{
+    padding: 0%;
+}
+
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+.signup-link a {
+    color: #45f3ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
 }
 
 /* Styling for the container of the todo list */
