@@ -169,22 +169,23 @@ document.getElementById('addBtn').addEventListener('click', function () {
 });
 
 // Function to create a Google Calendar event link (set reminder)
-function setReminder(taskText, dueDate) {
-  // Convert dueDate to a format that Google Calendar can accept (YYYYMMDDTHHmmss)
-  const dueDateTime = new Date(dueDate);
-  const year = dueDateTime.getFullYear();
-  const month = ('0' + (dueDateTime.getMonth() + 1)).slice(-2); // 0-based month
-  const day = ('0' + dueDateTime.getDate()).slice(-2);
-  const hours = ('0' + dueDateTime.getHours()).slice(-2);
-  const minutes = ('0' + dueDateTime.getMinutes()).slice(-2);
+  // Function to create a Google Calendar event link (set reminder)
+  function setReminder(taskText, dueDate) {
+    // Convert dueDate to a format that Google Calendar can accept (YYYYMMDDTHHmmss)
+    const dueDateTime = new Date(dueDate);
+    const year = dueDateTime.getFullYear();
+    const month = ('0' + (dueDateTime.getMonth() + 1)).slice(-2); // 0-based month
+    const day = ('0' + dueDateTime.getDate()).slice(-2);
+    const hours = ('0' + dueDateTime.getHours()).slice(-2);
+    const minutes = ('0' + dueDateTime.getMinutes()).slice(-2);
 
-  const startDateTime = `${year}${month}${day}T${hours}${minutes}00`;
+    const startDateTime = `${year}${month}${day}T${hours}${minutes}00`;
 
-  // Generate the Google Calendar event link
-  const calendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(taskText)}&dates=${startDateTime}/${startDateTime}&details=${encodeURIComponent('Task: ' + taskText)}`;
+    // Generate the Google Calendar event link
+    const calendarLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(taskText)}&dates=${startDateTime}/${startDateTime}&details=${encodeURIComponent('Task: ' + taskText)}`;
 
-  // Open the Google Calendar event in a new window
-  window.open(calendarLink, '_blank');
+    // Open the Google Calendar event in a new window
+    window.open(calendarLink, '_blank');
 }
 
 // Remove a task
