@@ -7,7 +7,14 @@ const port = process.env.PORT || 3000; // Use environment variable or default to
 // Serve static files from the "docs" folder
 app.use(express.static(path.join(__dirname, 'docs')));
 
+// specify where views dir is
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', (request, response) => {
+  response.sendFile(path.join(__dirname, 'views', 'index.html'))
+})
+
 // Start the server
-app.listen(port, '0.0.0.0', () => {
-  console.log(`To-Do List app is running at http://0.0.0.0:${port}`);
+app.listen(port, () => {
+  console.log(`To-Do List app is running at ${port}`);
 });
