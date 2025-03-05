@@ -1,0 +1,547 @@
+/* Basic Styling */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #2f4f4f ;
+  background-image: url(lovepik-science-and-technology-information-technology-background-image_400112393.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  text-align: center;
+}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh; /* Fixed typo: "min: height" -> "min-height" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4b6584;
+}
+
+.form-container {
+    position: relative;
+    width: 400px;
+    padding: 50px 40px;
+    background: #0a0a0a;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%; /* Fixed typo: missing "%" */
+    width: 400px;
+    height: 520px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right; /* Fixed typo: "buttom" -> "bottom" */
+    animation: animate 6s linear infinite;
+}
+
+.form-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%; /* Fixed typo: missing "%" */
+    width: 400px;
+    height: 520px;
+    background: linear-gradient(0deg, transparent, #2759ff, #276bff);
+    transform-origin: bottom right; /* Fixed typo: "buttom" -> "bottom" */
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    position: relative;
+    z-index: 10;
+    background: #0a0a0a;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.input-box {
+    position: relative; /* Added to position the label correctly */
+}
+
+.input-box input {
+    width: 100%; /* Fixed typo: "100" -> "100%" */
+    padding: 15px 20px;
+    border: none;
+    background: #1a1a1a;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.input-box label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5); /* Fixed syntax: "rgb(255, 255, 255,0.5)" -> "rgba(255, 255, 255, 0.5)" */
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label { /* Fixed syntax: missing comma */
+    top: -10px;
+    left: 15px;
+    font-size: 0.8em;
+    color: #3d27ff;
+    box-shadow: 0 0 20px rgba(255, 39, 112, 0.33); /* Fixed syntax: "#ff277055" -> "rgba(255, 39, 112, 0.33)" */
+}
+
+.form button {
+    background: linear-gradient(45deg, #5427cf, #45f3ff);
+    border: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.form button:hover::before {
+    left: 100%; /* Added to animate the gradient effect on hover */
+}
+
+.form button:hover
+{
+  box-shadow:0 0 30px #103d70 ;
+  transform: translateY(-2px);
+
+}
+@media  ( max-width :480px)
+{
+.form-container{
+    width:90% ;
+    padding: 30%;
+}
+.form{
+    padding: 0%;
+}
+
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+.signup-link a {
+    color: #45f3ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the container of the todo list */
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Default width for small screens */
+  max-width: 600px; /* Maximum width */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: bounceIn 0.5s ease-out;
+}
+
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sign Up Form Container */
+#signUpForm {
+  background-color: #dcdcdc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#signUpForm h2 {
+  color: #dcdcdc;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#signUpForm input {
+  width: 80%; /* Adjust width to fit on smaller screens */
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #a7abcf;
+  font-size: 1em;
+}
+
+#signUpForm button {
+  width: 80%; /* Adjust button width */
+  padding: 12px;
+  background-color: #8294bd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+#signUpForm button:hover {
+  background-color: #dcdcdc;
+}
+
+/* Sign In Form Container */
+#signInForm {
+  background-color: #dcdcdc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#signInForm h2 {
+  color: #8b8fb3;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#signInForm input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #7e8b8f;
+  font-size: 1em;
+}
+
+#signInForm button {
+  width: 80%;
+  padding: 12px;
+  background-color: #899fa8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+#signInForm button:hover {
+  background-color: #6a9aa7;
+}
+
+/* Forgot Password Form Container */
+#forgotPasswordForm {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#forgotPasswordForm h2 {
+  color: #7497b4;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#forgotPasswordForm input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #71838b;
+  font-size: 1em;
+}
+
+#forgotPasswordForm button {
+  width: 80%;
+  padding: 12px;
+  background-color: #90a2aa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+#forgotPasswordForm button:hover {
+  background-color: #a5c6d6;
+}
+
+/* To-Do List Container */
+   #todoSection {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.5s ease-in-out;
+ }
+
+ /* Task Input Section */
+  .task-input {
+   display: flex;
+   gap: 1rem;
+   margin-bottom: 1.5rem;
+ }
+
+        .task-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .task-input input:focus {
+            border-color: #007bff;
+        }
+
+        .task-input button {
+            padding: 0.75rem 1.5rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .task-input button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Task List */
+        #todoList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #todoList li {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li:hover {
+            background-color: #f1f1f1;
+        }
+
+        #todoList li.completed {
+            background-color: #e8f5e9;
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        #todoList li .task-text {
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        #todoList li .due-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        #todoList li .tick-box {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        #todoList li .reminder-btn {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li .reminder-btn:hover {
+            background-color: #e0a800;
+        }
+
+        #todoList li .delete-btn {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li .delete-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+/* Media Queries for responsiveness */
+
+/* For devices smaller than 768px (e.g., tablets and mobile phones) */
+@media only screen and (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    font-size: 1.5em;
+  }
+
+  #header h1 {
+    font-size: 2em;
+  }
+
+  #clock {
+    font-size: 1em;
+  }
+
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  /* Adjust input and buttons for smaller screens */
+  #signUpForm input,
+  #signInForm input,
+  #forgotPasswordForm input,
+  #todoSection .task-input input,
+  #todoSection button {
+    width: 80%;
+  }
+
+  button {
+    width: 80%;
+  }
+
+  /* Adjust task list styling */
+  li {
+    width: 100%; /* Make sure list items fit small screens */
+  }
+
+  li button.delete-btn {
+    width: 25%;
+  }
+}
+
+/* For very small screens like mobile phones (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  #header {
+    font-size: 1.2em;
+    padding: 10px 5px;
+  }
+
+  #header h1 {
+    font-size: 1.8em;
+  }
+
+  #clock {
+    font-size: 1em;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  input, button {
+    width: 90%;
+  }
+
+  li {
+    font-size: 0.9em;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
