@@ -75,5 +75,5 @@ Dark Mode: Implement a dark mode toggle.
 Better Styling: Improve the design with animations and transitions.
 
 ## Link of the project
-https://github.com/calvinkhoza
+[https://github.com/calvinkhoza](https://github.com/calvinkhoza/TO-DO-LIST)
 
