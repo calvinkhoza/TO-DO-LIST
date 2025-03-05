@@ -1,0 +1,447 @@
+/* Basic Styling */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #2f4f4f ;
+  background-image: url(lovepik-science-and-technology-information-technology-background-image_400112393.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  text-align: center;
+}
+  /* General Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #d61c1c;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #007bff, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Header Styling */
+#header {
+  background-color: #d80b0b;
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Basic styling for the header */
+#header {
+  background-color: #5458b1; /* Dark background */
+  color: #fff; /* White text */
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Styling for the clock */
+#clock {
+  font-size: 1.5em; /* Large font size */
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Styling for the container of the todo list */
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Default width for small screens */
+  max-width: 600px; /* Maximum width */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: bounceIn 0.5s ease-out;
+}
+
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sign Up Form Container */
+#signUpForm {
+  background-color: #dcdcdc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#signUpForm h2 {
+  color: #dcdcdc;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#signUpForm input {
+  width: 80%; /* Adjust width to fit on smaller screens */
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #a7abcf;
+  font-size: 1em;
+}
+
+#signUpForm button {
+  width: 80%; /* Adjust button width */
+  padding: 12px;
+  background-color: #8294bd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+#signUpForm button:hover {
+  background-color: #dcdcdc;
+}
+
+/* Sign In Form Container */
+#signInForm {
+  background-color: #dcdcdc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#signInForm h2 {
+  color: #8b8fb3;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#signInForm input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #7e8b8f;
+  font-size: 1em;
+}
+
+#signInForm button {
+  width: 80%;
+  padding: 12px;
+  background-color: #899fa8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+#signInForm button:hover {
+  background-color: #6a9aa7;
+}
+
+/* Forgot Password Form Container */
+#forgotPasswordForm {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#forgotPasswordForm h2 {
+  color: #7497b4;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#forgotPasswordForm input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 2px solid #71838b;
+  font-size: 1em;
+}
+
+#forgotPasswordForm button {
+  width: 80%;
+  padding: 12px;
+  background-color: #90a2aa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+}
+
+#forgotPasswordForm button:hover {
+  background-color: #a5c6d6;
+}
+
+/* To-Do List Container */
+   #todoSection {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.5s ease-in-out;
+ }
+
+ /* Task Input Section */
+  .task-input {
+   display: flex;
+   gap: 1rem;
+   margin-bottom: 1.5rem;
+ }
+
+        .task-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .task-input input:focus {
+            border-color: #007bff;
+        }
+
+        .task-input button {
+            padding: 0.75rem 1.5rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .task-input button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Task List */
+        #todoList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #todoList li {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li:hover {
+            background-color: #f1f1f1;
+        }
+
+        #todoList li.completed {
+            background-color: #e8f5e9;
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        #todoList li .task-text {
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        #todoList li .due-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        #todoList li .tick-box {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        #todoList li .reminder-btn {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li .reminder-btn:hover {
+            background-color: #e0a800;
+        }
+
+        #todoList li .delete-btn {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #todoList li .delete-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+/* Media Queries for responsiveness */
+
+/* For devices smaller than 768px (e.g., tablets and mobile phones) */
+@media only screen and (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    font-size: 1.5em;
+  }
+
+  #header h1 {
+    font-size: 2em;
+  }
+
+  #clock {
+    font-size: 1em;
+  }
+
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  /* Adjust input and buttons for smaller screens */
+  #signUpForm input,
+  #signInForm input,
+  #forgotPasswordForm input,
+  #todoSection .task-input input,
+  #todoSection button {
+    width: 80%;
+  }
+
+  button {
+    width: 80%;
+  }
+
+  /* Adjust task list styling */
+  li {
+    width: 100%; /* Make sure list items fit small screens */
+  }
+
+  li button.delete-btn {
+    width: 25%;
+  }
+}
+
+/* For very small screens like mobile phones (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  #header {
+    font-size: 1.2em;
+    padding: 10px 5px;
+  }
+
+  #header h1 {
+    font-size: 1.8em;
+  }
+
+  #clock {
+    font-size: 1em;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  input, button {
+    width: 90%;
+  }
+
+  li {
+    font-size: 0.9em;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
