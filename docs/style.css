@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   text-align: center;
 }
+
   /* General Styles */
   body {
     font-family: 'Poppins', sans-serif;
@@ -47,6 +48,7 @@ h1 {
       transform: translateY(0);
   }
 }
+
 /* Header Styling */
 #header {
   background-color: #d80b0b;
@@ -60,6 +62,7 @@ h1 {
   font-size: 1.8em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 /* Basic styling for the header */
 #header {
   background-color: #5458b1; /* Dark background */
